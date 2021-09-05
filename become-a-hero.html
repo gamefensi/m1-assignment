@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAW: Pet Adoption World</title>
+</head>
+<body>
+
+<!-- Container to wrap everything -->
+<div id="container">
+    
+    <!-- Brand of website -->
+    <header><H1>PAW Corporation</H1></header>
+    <!-- Main navigation -->
+
+    <!-- Start Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <!-- sign up form -->
+            <li><a href="become-a-hero.html">Become a hero</a></li>
+            <!-- Online Merch Store -->
+            <li>Store</li>
+            <!-- Contact page -->
+            <li>Contact Us</li>
+        </ul>
+    </nav>
+    <!-- End Navigation -->
+
+    <!-- Main Content -->
+    <main>
+        <div id="part1">
+            <h1>Calling All SuPaw&trade; Heroes</h1>
+            <img src="images/supawhero.png" alt="cool dog" width="250">
+            <h2>Sign Up for News, Merch, and Monthly Events!</h2>
+            <p>Member Benefits:</p>
+            <ul>
+                <li>Access to monthly newsletters on our newest adoptees</li>
+                <li>Chance to win free prizes in our monthly raffle</li>
+                <li>Invitations to our private fundraising/charity events</li>
+                <li>The knowledge that you are making the world a better place</li>
+            </ul>
+            <h2>Sign Up Today!</h2>
+            <form action="/signup" method="post">
+                <legend>Registration Form</legend>
+                <fieldset>
+                    <label>Enter your full name</label><br>
+                    <input type="text" name="Name" size="40"><br>
+                    <label>Enter your phone number</label><br>
+                    <input type="text" name="Phone"><br>
+                    <label>Enter your email address</label><br>
+                    <input type="email" name="Email" size="40"><br><br>
+                    <label>How did you hear about us?</label><br>
+                    <select>
+                        <option>fundraiser event</option>
+                        <option>friend</option>
+                        <option>search engine</option>
+                        <option>other</option>
+                    </select><br>
+                    <br><label>I'm interested in adopting a pet</label>
+                    <input type="checkbox" name="adopter"><br><br>
+                    <label>Keep me informed of PAW Corp news!</label>
+                    <input type="checkbox" name="mailerOptIn"><br><br>
+                    <input type="submit" value="Sign up">
+                    
+                </fieldset>
+            </form>
+        </div>
+
+    </main>
+
+    <!-- Footer Information -->
+    <footer>
+        &copy; Copyright PAW Corp 2021
+    </footer>
+
+</div>
+<!-- End Container -->
+</body>
+</html>
