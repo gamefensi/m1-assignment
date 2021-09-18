@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAW: Pet Adoption World</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Container to wrap everything -->
+    <div id="container">
+      <!-- Brand of website -->
+      <header>
+        <div id="main-header">
+          <h1>PAW Corporation</h1>
+          <img class="main-logo" src="images/logo-tp.png" alt="pawcorp logo" />
+        </div>
+      </header>
+      <!-- Main navigation -->
+
+      <!-- Start Navigation -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <!-- Pet Adoption Gallery -->
+          <li class="active"><a href="our-pets.html">Our Pets</a></li>
+          <!-- sign up form -->
+          <li><a href="become-a-hero.html">Become a hero</a></li>
+          <!-- Online Merch Store -->
+          <li>Store</li>
+          <!-- Contact page -->
+          <li>Contact Us</li>
+        </ul>
+      </nav>
+      <!-- End Navigation -->
+
+      <!-- Main Content -->
+      <main>
+        <h1>Our Pets</h1>
+        <p>Find our newest paw pals in need of a loving home. </p>
+
+        <ul id="album">
+          <!-- <li id="photo"><img src="images/petphoto1.jpg" /></li>
+          <li id="photo"><img src="images/petphoto2.jpg" /></li>
+          <li id="photo"><img src="images/petphoto3.jpg" /></li>
+          <li id="photo"><img src="images/petphoto4.jpg" /></li>
+          <li id="photo"><img src="images/petphoto5.jpg" /></li>
+          <li id="photo"><img src="images/petphoto6.jpg" /></li> -->
+        </ul>
+      </main>
+
+      <!-- Footer Information -->
+      <footer>&copy; Copyright PAW Corp 2021</footer>
+    </div>
+    <!-- End Container -->
+    <!-- Begin JavaScript -->
+    <script>
+      var numOfPhotos = 6;
+      var photos = []; //Declare an empty array to store image element
+      var fileNames = []; //Declare an empty array to store image filenames
+      var imageList = []; //Declare an empty array to store html list that contains an image
+      var image; //Declare an empty variable to store assembled image list codes
+      var openList = "<li id='photo'>"; //Declare a variable to contain an open list tag
+      var closeList = "</li>"; //Declare a variable to contain a close list tag
+
+      //Create a loop to create 6 images starting with index of 0
+      for (var i = 0; i < numOfPhotos; i++) {
+        fileNames.push("petphoto" + (i + 1)); //create image file name & store in array
+        photos.push("<img src='images/" + fileNames[i] + ".jpg'>"); //Assemble file name into an image element and store in an array
+        image = openList + photos[i] + closeList; //Assemble everything
+        imageList.push(image); //Store the fully assembled code of each image list
+      }
+
+      //Display all six image codes stored in the array
+      document.getElementById("album").innerHTML = imageList;
+    </script>
+  </body>
+</html>
