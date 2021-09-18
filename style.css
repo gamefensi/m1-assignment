@@ -182,3 +182,38 @@ label {
   border: none;
 }
 
+/* Our Pets Page */
+
+#album li {
+  position: relative;
+}
+#photo {
+  display: inline-block;
+  margin: 5px;
+}
+#photo figcaption {
+  text-align: center;
+  /* text-transform: uppercase; */
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color:burlywood ;
+  font-size: large;
+  font-weight: bold;
+  padding: 5px 0 1px 0;
+}
+#photo figcaption p {
+  font-weight:lighter ;
+}
+div .desc {
+  visibility: hidden;
+  position: absolute;
+  text-align: center;
+  bottom: 200px;
+  left: 10px;
+  padding: 10px;
+  font-size: small;
+  background-color: rgba(255, 255, 255, 0.747);
+  width: 280px;
+}
+main #album li:hover .desc{
+  visibility:visible;
+}
