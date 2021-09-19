@@ -75,10 +75,12 @@ main p {
 }
 .centerImg {
   display: block;
-  margin: 0 auto 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 div .endpageCTA {
   text-align: center;
+  margin-bottom: 10px;
 }
 /* Footer Section*/
 footer {
@@ -86,6 +88,8 @@ footer {
   background-color: cornsilk;
   font-size: smaller;
   color: #852b1b;
+  padding:10px;
+  border: 1px solid grey;
 }
 
 /* Index Page */
@@ -103,13 +107,14 @@ footer {
   background-color: #eeffe6;
   border: 1px solid green;
   padding-left: 5px;
+  min-height: 425px;
 }
 #corpIntro h2 {
   margin: 20px 0 0 50px;
   text-align: center;
 }
 #corpIntro #whoWeAre {
-  width: 50%;
+  width: 75%;
   margin: 0 auto 0 auto; 
   padding: 5px
 }
@@ -129,17 +134,18 @@ footer {
 }
 #corpIntro #ourMission {
   clear: both;
-  width: 50%;
+  width: 75%;
   margin: 0 auto 0 auto;
   padding: 0 0 20px 0;
 }
 #corpIntro #ourMission img {
   width: 200px;
-  margin: 20px 0 10px 20px;
+  margin: 20px 0 20px 20px;
 }
 #corpIntro #ourMission p {
   padding-top: 30px;
   line-height: 2em;
+  /* padding-bottom: 50px; */
 }
 
 
@@ -244,14 +250,15 @@ label {
 
 /* Our Pets Page */
 
-/* #album li {
-  position: relative;
-} */
+
 #photo {
   display: inline-block;
   position: relative;
   margin: 5px;
   border: 2px outset cadetblue;
+}
+#photo:hover {
+  cursor:pointer;
 }
 #photo figcaption {
   text-align: center;
@@ -283,5 +290,4 @@ div .desc {
 }
 main #album li:hover .desc {
   visibility: visible;
-  cursor:pointer;
 }
