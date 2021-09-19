@@ -283,4 +283,5 @@ div .desc {
 }
 main #album li:hover .desc {
   visibility: visible;
+  cursor:pointer;
 }
