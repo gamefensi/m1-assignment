@@ -257,9 +257,9 @@ label {
   margin: 5px;
   border: 2px outset cadetblue;
 }
-#photo:hover {
+/* #photo:hover {
   cursor:pointer;
-}
+} */
 #photo figcaption {
   text-align: center;
   /* text-transform: uppercase; */
@@ -287,7 +287,35 @@ div .desc {
   font-size: small;
   background-color: rgba(255, 255, 255, 0.747);
   width: 280px;
+  cursor:pointer;
 }
 main #album li:hover .desc {
   visibility: visible;
+}
+div #infoBox {
+  position: fixed;
+  z-index: 20;
+  left: 550px;
+  right: auto;
+  top: auto;
+  background: rgba(0, 0, 0, 0.795);
+  color:#fff;
+  padding: 50px 50px 0 50px;
+  border-radius: 5%;
+  text-align: center;
+  visibility: hidden;
+}
+#infoBox #boxHeader {
+  font-family:'Times New Roman', Times, serif;
+  text-align: left;
+}
+#infoBox #boxTxt {
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+}
+#infoBox #closeBox {
+  color:yellow;
+  line-height: 5em;
+  cursor:pointer;
 }
