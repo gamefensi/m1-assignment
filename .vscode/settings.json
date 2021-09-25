@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.port": 5830
+    "liveServer.settings.port": 5830,
+    "liveServer.settings.multiRootWorkspaceName": "m1-assignment"
 }
