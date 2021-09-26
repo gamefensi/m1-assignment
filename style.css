@@ -250,7 +250,9 @@ label {
 
 /* Our Pets Page */
 
-
+#album {
+  position: relative;
+}
 #photo {
   display: inline-block;
   position: relative;
@@ -289,32 +291,31 @@ div .desc {
   width: 280px;
   cursor:pointer;
 }
-main #album li:hover .desc {
+main #photo:hover .desc {
   visibility: visible;
 }
-div #infoBox {
+div .infoBox {
   position: fixed;
   z-index: 20;
-  left: 550px;
-  right: auto;
-  top: auto;
+  left: 400px;
+  top: 200px;
   background: rgba(0, 0, 0, 0.795);
   color:#fff;
   padding: 50px 50px 0 50px;
   border-radius: 5%;
-  text-align: center;
   visibility: hidden;
+  width: 50%;
 }
-#infoBox #boxHeader {
+.infoBox .boxHeader {
   font-family:'Times New Roman', Times, serif;
   text-align: left;
 }
-#infoBox #boxTxt {
+.infoBox .boxTxt {
   text-align: left;
   font-family: 'Times New Roman', Times, serif;
   font-size: large;
 }
-#infoBox #closeBox {
+.infoBox .closeBox {
   color:yellow;
   line-height: 5em;
   cursor:pointer;
