@@ -58,18 +58,31 @@
                     <div class="textfields">                    
                         <label>Enter your full name</label>
                         <input type="text" name="Name" size="40">
+                    </div>
+                    <div class="dropdownselect" id="chooseContact">
+                        <label>How should we contact you?</label>
+                        <select id="choices">
+                            <option>Choose an option</option>
+                            <option>Email</option>
+                            <option>Phone</option>
+                        </select>
+                    </div>
+                    <div class="conditionalFields" id="phoneContact">
                         <label>Enter your phone number</label>
                         <input type="text" name="Phone">
+                    </div>
+                    <div class="conditionalFields" id="emailContact">
                         <label>Enter your email address</label>
                         <input type="email" name="Email" size="40">
                     </div>
                     <div class="dropdownselect">
                     <label>How did you hear about us?</label>
                     <select>
-                        <option>fundraiser event</option>
-                        <option>friend</option>
-                        <option>search engine</option>
-                        <option>other</option>
+                        <option>Choose an option</option>
+                        <option>Fundraiser event</option>
+                        <option>Friend</option>
+                        <option>Search engine</option>
+                        <option>Other</option>
                     </select>
                 </div>
                     <div class="checkbox1">
@@ -98,5 +111,7 @@
 
 </div>
 <!-- End Container -->
+<!-- Start Javascript -->
+<script src="js/contact.js"></script>
 </body>
 </html>

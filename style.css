@@ -234,6 +234,9 @@ label {
 .checkbox2 label {
   display: inline-flex;
 }
+.conditionalFields {
+  display:none;
+}
 /* Submit button */
 .button {
   margin: 1em;
