@@ -62,7 +62,7 @@ var petHdr10 = "Christina"
 var petCap10 = "Christina<p>Sex: N<br>Age: 7 Years</p>";
 var petDesc10 = "Christina is a 7 year old Black Shetid Sheepdog Mix";
 var petInfo10 = "Christina's info";
-var openInfoTag = "<div class='infoBox'> ";
+var openInfoTag = "<div class='infoBox' id='infoBox";
 var closeInfoTag = "</div>";
 
 var captionTexts = [
@@ -127,6 +127,8 @@ for (var i = 0; i < numOfPhotos; i++) {
     i +
     closeDescTag +
     openInfoTag +
+    i +
+    "'>" +
     closeInfoTag +
     descTexts[i] +
     closeDescTag2 +
@@ -142,22 +144,23 @@ document.getElementById("album").innerHTML = imageList.join("");
 
 //info box code
 // var getDivDesc = document.getElementById("descBox");
-var getInfoBox = document.querySelector(".infoBox"); 
+// var getInfoBox = document.getElementById("infoBox"); 
 
 //display text box
-function displayInfo(i) {
-  getInfoBox.style.visibility = "visible";
-  getInfoBox.innerHTML = 
-  "<div><h1 class='boxHeader'>"+ petHdrs[i]+"</h1>"+
-  "<p class='boxTxt'>"+petTxts[i]+"</p></div>"+
-  "<div class='closeBox'>Close This Box</div>";
-  
-}
-//close text box
-var getCloseBox = document.querySelector(".closeBox");
-// S
-getCloseBox.addEventListener("click",closeBox);
 
-function closeBox() {
-  getInfoBox.style.visibility = "hidden";
-}
+function displayInfo(i) {
+  document.getElementById("infoBox"+i).innerHTML = 
+  "<h1 class='boxHeader'>"+ petHdrs[i]+"</h1>"+
+  "<p class='boxTxt'>"+petTxts[i]+"</p>"+
+  "<div id='closeBox' onclick='hideBox("+i+")'>Close This Box</div>";
+  document.getElementById("infoBox"+i).style.visibility = "visible";
+  // document.getElementById("infoBox"+i).style.display = "block";
+};
+
+//close text box
+// document.getElement("closeBox").onclick = hideBox;
+
+function hideBox(i) {
+  document.getElementById("infoBox"+i).style.visibility = "hidden";
+  document.getElementById("infoBox"+i).style.display = "none";
+};
