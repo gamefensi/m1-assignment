@@ -235,8 +235,9 @@ label {
   display: inline-flex;
 }
 .conditionalFields {
-  display:none;
+  display: none;
 }
+
 /* Submit button */
 .button {
   margin: 1em;
