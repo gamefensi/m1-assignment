@@ -4,6 +4,8 @@ var fileNames = []; //Declare an empty array to store image filenames
 var imageList = []; //Declare an empty array to store html list that contains an image
 var image; //Declare an empty variable to store assembled image list codes
 var openList = "<li id='photo'>"; //Declare a variable to contain an open list tag
+var openLink = "<a href='#/' class='lightbox-toggle'>";
+var closeLink ="</a>";
 var closeList = "</li>"; //Declare a variable to contain a close list tag
 var openCaptionTag = "<figcaption>";
 var closeCaptionTag = "</figcaption>";
@@ -119,10 +121,12 @@ var petHdrs = [
 //Create a loop to create 6 images starting with index of 0
 for (var i = 0; i < numOfPhotos; i++) {
   fileNames.push("petphoto" + (i + 1)); //create image file name & store in array
-  photos.push("<img src='images/" + fileNames[i] + ".jpg'>"); //Assemble file name into an image element and store in an array
+  photos.push("<img src='images/" + fileNames[i] + ".jpg' alt='" + fileNames[i] +"'>"); //Assemble file name into an image element and store in an array
   image =
     openList +
+    openLink +
     photos[i] +
+    closeLink +
     openDescTag +
     i +
     closeDescTag +
