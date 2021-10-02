@@ -180,32 +180,29 @@ function hideBox(i) {
 
 //lightbox assignment
 /* Open lightbox on button click */
-$(document).ready(function(){
-$('.lightbox-toggle img').click(function () {
-  $('.backdrop').animate({ 'opacity': '.50' }, 300, 'linear').css('display', 'block');
-  $('.box').fadeIn();
+$(document).ready(function () {
+  $('.lightbox-toggle img').click(function (e) {
+    $('.backdrop').animate({ 'opacity': '.50' }, 300, 'linear').css('display', 'block');
+    $('.box').fadeIn();
 
-  //Check if lightbox has an image
-  if ($('.box').contents('img')) {
-    $('.box').contents().remove('img'); //If true, clear image
-  }
+    //Check if lightbox has an image
+    if ($('.box').contents('img')) {
+      $('.box').contents().remove('img'); //If true, clear image
+    }
 
-  //Get text content in attribute
-  var altValue = $(this).attr('alt'); //or var altvalue = $(this).attr('alt');
-  var lastChar = altValue[altValue.length-1];
-  var img = $('#photo:nth-child('+ lastChar +') img').clone();//Duplicate DOM element
-  // var img = $("#photo:nth-child(3) img").clone()
-  $('.box').append(img); //Insert duplicated element in another element
-  // If (altvalue == "petPhoto") {
-  //   var img = $('#photo:nth-child(1) img').clone(); //Duplicate DOM element
-  //   $('.box').append(img); //Insert duplicated element in another element
+    //find Index of Parent
+    var indexParent = $(e.target).parent().parent().index();
+
+    var img = $('#photo:nth-child('+ (indexParent += 1) +') img').clone();//Duplicate DOM element dynamically
+    // var img = $(this).clone(); //Backup
+    $('.box').append(img); //Insert duplicated element into box
   });
 
-/* Click to close lightbox */
-$('.close, .backdrop').click(function () {
-  $('.backdrop').animate({ 'opacity': '0' }, 300, 'linear', function () {
-    $('.backdrop').css('display', 'none');
+  /* Click to close lightbox */
+  $('.close, .backdrop').click(function () {
+    $('.backdrop').animate({ 'opacity': '0' }, 300, 'linear', function () {
+      $('.backdrop').css('display', 'none');
+    });
+    $('.box').fadeOut();
   });
-  $('.box').fadeOut();
-});
 });
