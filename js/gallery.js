@@ -5,7 +5,7 @@ var imageList = []; //Declare an empty array to store html list that contains an
 var image; //Declare an empty variable to store assembled image list codes
 var openList = "<li id='photo'>"; //Declare a variable to contain an open list tag
 var openLink = "<a href='#/' class='lightbox-toggle'>";
-var closeLink ="</a>";
+var closeLink = "</a>";
 var closeList = "</li>"; //Declare a variable to contain a close list tag
 var openCaptionTag = "<figcaption>";
 var closeCaptionTag = "</figcaption>";
@@ -120,8 +120,8 @@ var petHdrs = [
 
 //Create a loop to create 6 images starting with index of 0
 for (var i = 0; i < numOfPhotos; i++) {
-  fileNames.push("petphoto" + (i + 1)); //create image file name & store in array
-  photos.push("<img src='images/" + fileNames[i] + ".jpg' alt='" + fileNames[i] +"'>"); //Assemble file name into an image element and store in an array
+  fileNames.push("petPhoto" + (i + 1)); //create image file name & store in array
+  photos.push("<img src='images/" + fileNames[i] + ".jpg' alt='" + fileNames[i] + "'>"); //Assemble file name into an image element and store in an array
   image =
     openList +
     openLink +
@@ -171,7 +171,40 @@ function displayInfo(i) {
 //close text box
 // document.getElement("closeBox").onclick = hideBox;
 
+
 function hideBox(i) {
   var x = document.getElementById("infoBox" + i);
   x.style.visibility = "visible";
 }
+
+
+//lightbox assignment
+/* Open lightbox on button click */
+$(document).ready(function(){
+$('.lightbox-toggle img').click(function () {
+  $('.backdrop').animate({ 'opacity': '.50' }, 300, 'linear').css('display', 'block');
+  $('.box').fadeIn();
+
+  //Check if lightbox has an image
+  if ($('.box').contents('img')) {
+    $('.box').contents().remove('img'); //If true, clear image
+  }
+
+  //Get text content in attribute
+  // var altvalue = $(this).attr('alt'); //or var altvalue = $(this).attr('alt');
+
+  var img = $('#photo;nth-child('+this.index()+')').clone();//Duplicate DOM element
+  $('.box').append(img);//Insert duplicated element in another element
+  // If (altvalue == "petPhoto") {
+  //   var img = $('#photo:nth-child(1) img').clone(); //Duplicate DOM element
+  //   $('.box').append(img); //Insert duplicated element in another element
+  });
+
+/* Click to close lightbox */
+$('.close, .backdrop').click(function () {
+  $('.backdrop').animate({ 'opacity': '0' }, 300, 'linear', function () {
+    $('.backdrop').css('display', 'none');
+  });
+  $('.box').fadeOut();
+});
+});

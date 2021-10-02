@@ -262,6 +262,9 @@ label {
   margin: 5px;
   border: 2px outset cadetblue;
 }
+#photo img {
+  z-index: 3;
+}
 /* #photo:hover {
   cursor:pointer;
 } */
@@ -299,7 +302,7 @@ main #photo:hover .desc {
 }
 div .infoBox {
   position: fixed;
-  z-index: 20;
+  z-index: 4;
   left: 400px;
   top: 200px;
   background: rgba(0, 0, 0, 0.795);
@@ -329,7 +332,7 @@ div .infoBox {
 }
 
 .backdrop {
-  z-index: 1;
+  z-index: 5;
   opacity: .0;
   filter: alpha(opacity=0);
   display: none;
@@ -341,7 +344,7 @@ div .infoBox {
   background: #000;
 }
 .box {
-  z-index: 2;
+  z-index: 6;
   position: fixed;
   opacity: 1;
   display: none;
@@ -359,9 +362,9 @@ div .infoBox {
   box-shadow: 0px 0px 5px #444444;
 }
 
-* {
+/* * {
   z-index: 3;
-}
+} */
 
 .close {
   float: right;
