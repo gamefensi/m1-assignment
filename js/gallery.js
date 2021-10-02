@@ -191,10 +191,11 @@ $('.lightbox-toggle img').click(function () {
   }
 
   //Get text content in attribute
-  // var altvalue = $(this).attr('alt'); //or var altvalue = $(this).attr('alt');
-
-  var img = $('#photo;nth-child('+this.index()+')').clone();//Duplicate DOM element
-  $('.box').append(img);//Insert duplicated element in another element
+  var altValue = $(this).attr('alt'); //or var altvalue = $(this).attr('alt');
+  var lastChar = altValue[altValue.length-1];
+  var img = $('#photo:nth-child('+ lastChar +') img').clone();//Duplicate DOM element
+  // var img = $("#photo:nth-child(3) img").clone()
+  $('.box').append(img); //Insert duplicated element in another element
   // If (altvalue == "petPhoto") {
   //   var img = $('#photo:nth-child(1) img').clone(); //Duplicate DOM element
   //   $('.box').append(img); //Insert duplicated element in another element
